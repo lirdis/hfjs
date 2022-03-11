@@ -1,0 +1,31 @@
+# Game Set-up
+Declare 3 variable to hold the ship's position
+Declare a variable to hold each of the user's guesses
+Declare a variable which would count (accumulate/aggregate) all of the user's guesses
+Declare a variable which would count all of the user's hits
+Declare a variable which would signal when a ship has sunk
+
+# Game Flow
+WHILE ship isn't sunk
+  GET the user's guess
+  VALIDATE guess (compare user's guess to possible values)
+  IF Guess isn't valid
+    TELL the user and return to guess
+  ELSE (Guess is valid)
+    ADD 1 to guess counter
+    IF guess is not a hit
+      TELL the user and return to guess
+    ELSE (guess is a hit)
+      ADD 1 to hit counter
+      IF the ship isn't sunk
+        TELL the user and return to guess
+      ELSE (the user has sunk the ship)
+        SET isSunk to true
+        TELL the user "You've sunk my battleship"
+      END IF
+    END IF
+  END IF
+END LOOP
+TELL the user's score!
+
+In the meantime we're using the browser's "prompt" functionality for getting the user's guesses input and the browser's "alert" functionality for telling the user about the progress.
